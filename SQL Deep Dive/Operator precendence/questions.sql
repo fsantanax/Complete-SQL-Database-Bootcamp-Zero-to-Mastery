@@ -7,10 +7,15 @@
 * Include people that are 50
 * that are from either Japan or Australia
 */
-
+SELECT country, firstname, age, income FROM customers
+WHERE income > '50000' AND (age < '30' OR age > '50') 
+AND (country = 'Japan' OR country = 'Australia');
 /*
 * DB: Store
 * Table: Orders
 * Question: 
 * What was our total sales in June of 2004 for orders over 100 dollars?
 */
+SELECT sum(totalamount) FROM orders
+WHERE totalamount > '100' 
+AND (orderdate >= '2004-06-01' AND orderdate <= '2004-06-30');
